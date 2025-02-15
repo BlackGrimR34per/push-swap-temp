@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:39:09 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/14 17:21:58 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:32:24 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,17 @@ int	main(int argc, char *argv[])
 	stack_init(&stacks, argv);
 	if (is_unsorted(&stacks))
 		stack_sort(&stacks);
-	t_stack_node	*temp;
-	temp = stacks.a;
-	while (temp)
-	{
-		printf("Stack A: %d\n", temp->data);
-		temp = temp->next;
-	}
+	// t_stack_node	*temp;
+	// temp = stacks.a;
+	// while (temp)
+	// {
+	// 	printf("Stack A: %d\n", temp->data);
+	// 	temp = temp->next;
+	// }
+	// temp = stacks.b;
+	// while (temp)
+	// {
+	// 	printf("Stack B: %d\n", temp->data);
+	// 	temp = temp->next;
+	// }
 }
