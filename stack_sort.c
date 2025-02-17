@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   stack_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:30:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/15 22:48:42 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:00:19 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void	quick_sort_a(t_stack *stacks, int segment_size);
 
+// Might need to change the last recursive call also
 void	quick_sort_b(t_stack *stacks, int segment_size)
 {
 	int				median;
@@ -21,9 +22,9 @@ void	quick_sort_b(t_stack *stacks, int segment_size)
 
 	pushed = 0;
 	temp = stacks->b;
-	if (stacks->size_b <= 5)
+	if (segment_size <= 5)
 	{
-		sort_five_b(stacks);
+		sort_five_b(stacks, segment_size);
 		return ;
 	}
 	median = get_median_b(stacks);
@@ -41,14 +42,13 @@ void	quick_sort_b(t_stack *stacks, int segment_size)
 	quick_sort_b(stacks, stacks->size_b);
 }
 
+// Pushing of elements is wrong
 void	quick_sort_a(t_stack *stacks, int segment_size)
 {
 	int				median;
 	int				pushed;
-	t_stack_node	*temp;
 
 	pushed = 0;
-	temp = stacks->a;
 	if (stacks->size_a <= 5)
 	{
 		sort_five_a(stacks);
@@ -57,16 +57,21 @@ void	quick_sort_a(t_stack *stacks, int segment_size)
 	median = get_median_a(stacks);
 	while (pushed < segment_size / 2)
 	{
-		if (temp->data < median)
+		if (stacks->a->data < median)
 		{
 			pb(stacks);
 			pushed++;
 		}
 		else
-			temp = temp->next;
+			ra(stacks, 1);
 	}
 	quick_sort_a(stacks, stacks->size_a);
 	quick_sort_b(stacks, pushed);
+	while (pushed)
+	{
+		pa(stacks);
+		pushed--;
+	}
 }
 
 // void	quick_sort(t_stack *stacks, int segment_size)
@@ -92,7 +97,7 @@ void	quick_sort_a(t_stack *stacks, int segment_size)
 // 		{
 // 			pb(stacks);
 // 			pushed++;
-// 		}	
+// 		}
 // 	}
 // 	quick_sort(stacks, stacks->size_a);
 // }

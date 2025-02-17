@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:13:10 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/15 22:08:26 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/16 15:31:29 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort_five_a(t_stack *stacks)
 		turn_on = 0;
 	while (stacks->size_a > 3)
 	{
-		min_index = find_min_index(stacks);
+		min_index = find_min_index(stacks->a);
 		if (min_index == 0)
 			pb(stacks);
 		else if (min_index > stacks->size_a / 2)

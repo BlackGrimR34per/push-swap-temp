@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:45:22 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/11 21:30:07 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:46:53 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	add_to_stack(t_stack *stacks, int nbr)
 	}
 	else
 	{
-		last_node = ft_lstlast(stacks);
+		last_node = ft_lstlast(stacks->a);
 		last_node->next = node;
 		node->prev = last_node;
 	}

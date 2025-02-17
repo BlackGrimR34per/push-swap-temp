@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:39:54 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/15 13:38:20 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:20:13 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	add_to_stack(t_stack *stacks, int nbr);
 int		check_input(char *argv[]);
 long	ft_atol(const char *str);
 int		ft_isdigit(char c);
-t_stack_node	*ft_lstlast(t_stack *stacks);
+t_stack_node	*ft_lstlast(t_stack_node *node);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
@@ -73,8 +73,8 @@ void	stack_sort(t_stack *stacks);
 void	sort_three_a(t_stack *stacks);
 void	sort_three_b(t_stack *stacks);
 void	sort_five_a(t_stack *stacks);
-void	sort_five_b(t_stack *stacks);
-int		find_min_index(t_stack *stack);
+void	sort_five_b(t_stack *stacks, int segment_size);
+int		find_min_index(t_stack_node *node);
 
 int		get_median_a(t_stack *stacks);
 int		get_median_b(t_stack *stacks);

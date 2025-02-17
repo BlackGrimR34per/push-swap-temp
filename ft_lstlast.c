@@ -6,19 +6,19 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:23:35 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/11 23:50:18 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:46:26 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*ft_lstlast(t_stack *stacks)
+t_stack_node	*ft_lstlast(t_stack_node *node)
 {
 	t_stack_node	*temp;
 
-	if (!stacks->a)
+	if (!node)
 		return (NULL);
-	temp = stacks->a;
+	temp = node;
 	while (temp->next)
 		temp = temp->next;
 	return (temp);

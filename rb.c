@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:20:06 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/13 14:00:53 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:47:19 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	rb(t_stack *stacks, int to_print)
 	if (!stacks->b || !stacks->b->next)
 		return ;
 	first_node = stacks->b;
-	last_node = ft_lstlast(stacks);
+	last_node = ft_lstlast(stacks->b);
 	stacks->b = first_node->next;
 	stacks->b->prev = NULL;
 	first_node->next = NULL;
