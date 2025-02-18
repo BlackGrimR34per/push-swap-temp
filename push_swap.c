@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:39:09 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/18 10:46:38 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/18 14:58:27 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 			printf("Stack A: %d\n", temp->data);
 			temp = temp->next;
 		}
-		return (0);
+	return (0);
 	// temp = stacks.b;
 	// while (temp)
 	// {
