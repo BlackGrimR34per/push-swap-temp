@@ -6,12 +6,13 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 23:56:46 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/17 14:59:21 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:21:40 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Changing it to sort it in reverse order
 void sort_three_b(t_stack *stacks)
 {
 	int nbr_one;
@@ -39,21 +40,21 @@ void sort_three_b(t_stack *stacks)
 	}
 
 	// Now sort the 3 elements with the original logic
-	if (nbr_one > nbr_two && nbr_two < nbr_three && nbr_one < nbr_three)
-		sb(stacks, 1);
-	else if (nbr_one < nbr_two && nbr_two > nbr_three && nbr_one > nbr_three)
-		rrb(stacks, 1);
-	else if (nbr_one > nbr_two && nbr_one > nbr_three && nbr_two < nbr_three)
+	if (nbr_one < nbr_two && nbr_two > nbr_three && nbr_one < nbr_three)
 		rb(stacks, 1);
-	else if (nbr_two > nbr_one && nbr_two > nbr_three && nbr_three > nbr_one)
+	else if (nbr_one > nbr_two && nbr_two < nbr_three && nbr_one < nbr_three)
+		rrb(stacks, 1);
+	else if (nbr_one < nbr_two && nbr_one > nbr_three && nbr_two > nbr_three)
+		sb(stacks, 1);
+	else if (nbr_three > nbr_two && nbr_three > nbr_one && nbr_two > nbr_one)
 	{
 		sb(stacks, 1);
-		rb(stacks, 1);
+		rrb(stacks, 1);
 	}
-	else if (nbr_one > nbr_two && nbr_two > nbr_three && nbr_one > nbr_three)
+	else if (nbr_one > nbr_two && nbr_two < nbr_three && nbr_one > nbr_three)
 	{
 		sb(stacks, 1);
-		rrb(stacks, 1);
+		rb(stacks, 1);
 	}
 
 	// Move the elements back from stack A to stack B
