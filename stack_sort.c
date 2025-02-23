@@ -6,58 +6,40 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:30:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/18 10:48:55 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/23 20:44:37 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void	quick_sort_a(t_stack *stacks, int segment_size);
+#include <stdio.h>
 
-// Might need to change the last recursive call also
-void	quick_sort_b(t_stack *stacks, int segment_size)
+void	stack_sort(t_stack *stacks)
 {
-	int				median;
-	int				pushed;
-	t_stack_node	*temp;
+	t_segment	segment;
 
-	pushed = 0;
-	temp = stacks->b;
-	if (segment_size <= 5)
-	{
-		sort_five_b(stacks, segment_size);
+	if (!is_unsorted(stacks->a))
 		return ;
-	}
-	median = get_median_b(stacks);
-	while (pushed < segment_size / 2)
-	{
-		if (temp->data >= median)
-		{
-			pa(stacks);
-			pushed++;
-		}
-		else
-			temp = temp->next;
-	}
-	quick_sort_a(stacks, pushed);
-	quick_sort_b(stacks, stacks->size_b);
+	if (stacks->size_a <= 5)
+		sort_five_a(stacks);
+	else
+		sort_a(stacks, stacks->size_a);
 }
 
-// Pushing of elements is wrong
-void	quick_sort_a(t_stack *stacks, int segment_size)
+void	sort_a(t_stack *stacks, int segment_size)
 {
-	int				median;
-	int				pushed;
+	int	median;
+	int	pushed;
 
-	pushed = 0;
 	if (stacks->size_a <= 5)
 	{
 		sort_five_a(stacks);
 		return ;
 	}
 	median = get_median_a(stacks);
+	pushed = 0;
 	while (pushed < segment_size / 2)
 	{
-		if (stacks->a->data < median)
+		if (stacks->a->id <= median)
 		{
 			pb(stacks);
 			pushed++;
@@ -65,30 +47,31 @@ void	quick_sort_a(t_stack *stacks, int segment_size)
 		else
 			ra(stacks, 1);
 	}
-	quick_sort_a(stacks, stacks->size_a);
-	quick_sort_b(stacks, pushed);
-	while (pushed)
-	{
-		pa(stacks);
-		pushed--;
-	}
+	sort_a(stacks, stacks->size_a);
 }
 
-void	stack_sort(t_stack *stacks)
+void	sort_b(t_stack *stacks, int segment_size)
 {
-	t_segment	segment;
+	int	median;
+	int	pushed;
 
-	segment.segment_size = 0;
-	if (stacks->size_a == 3)
+	if (stacks->size_b <= 5)
 	{
-		sort_three_a(stacks);
+		sort_five_b(stacks, segment_size);
 		return ;
 	}
-	if (stacks->size_a <= 5)
+	median = get_median_b(stacks);
+	pushed = 0;
+	while (pushed < segment_size / 2)
 	{
-		sort_five_a(stacks);
-		return ;
+		if (stacks->b->id > median)
+		{
+			pa(stacks);
+			pushed++;
+		}
+		else
+			rb(stacks, 1);
 	}
-	segment.segment_size = stacks->size_a;
-	quick_sort_a(stacks, segment.segment_size);
+	sort_a(stacks, pushed);
+	sort_b(stacks, segment_size - pushed);
 }

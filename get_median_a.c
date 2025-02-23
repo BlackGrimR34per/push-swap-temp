@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_median.c                                       :+:      :+:    :+:   */
+/*   get_median_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:29:59 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/14 17:17:00 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/23 18:10:48 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,25 @@
 // Sorting array would take a long
 int	get_median_a(t_stack *stacks)
 {
-	int				*arr;
-	t_stack_node	*current;
-	int				i;
-	int				median;
+	int				min;
+	int				max;
+	t_stack_node	*temp;
 
-	arr = malloc(sizeof(int) * stacks->size_a);
-	if (!arr)
-		return (0);
-	current = stacks->a;
-	i = 0;
-	while (current)
+	temp = stacks->a;
+	min = stacks->a->id;
+	while (temp)
 	{
-		arr[i++] = current->data;
-		current = current->next;
+		if (temp->id < min)
+			min = temp->id;
+		temp = temp->next;
 	}
-	sort_array(arr, stacks->size_a);
-	median = arr[stacks->size_a / 2];
-	free(arr);
-	return (median);
+	temp = stacks->a;
+	max = stacks->a->id;
+	while (temp)
+	{
+		if (temp->id > max)
+			max = temp->id;
+		temp = temp->next;
+	}
+	return ((max + min) / 2);
 }
