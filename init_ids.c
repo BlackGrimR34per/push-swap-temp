@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
+/*   init_ids.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 20:11:34 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/23 11:29:42 by yosherau         ###   ########.fr       */
+/*   Created: 2025/02/23 11:29:47 by yosherau          #+#    #+#             */
+/*   Updated: 2025/02/23 11:55:24 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-// Unsure of what to do when nbr is greater than max or min
-void	stack_init(t_stack *stacks, char *argv[])
+void	init_ids(t_stack *stacks)
 {
-	int		row;
-	long	nbr;
+	int				*arr;
+	int				index;
+	t_stack_node	*ptr;
 
-	row = -1;
-	while (argv[++row])
+	arr = malloc(sizeof(int) * stacks->size_a);
+	if (!arr)
+		return ;
+	ptr = stacks->a;
+	index = 0;
+	while (ptr)
 	{
-		nbr = ft_atol(argv[row]);
-		if (nbr < INT_MIN || nbr > INT_MAX)
-			input_free(argv);
-		if (repeat(stacks, (int)nbr))
-			input_free(argv);
-		free(argv[row]);
-		add_to_stack(stacks, nbr);
+		arr[index++] = ptr->data;
+		ptr = ptr->next;
 	}
-	free(argv);
-	init_ids(stacks);
+	quick_sort(arr, 0, stacks->size_a);
+	ptr = stacks->a;
+	while (ptr)
+	{
+		index = 0;
+		while (arr[index] != ptr->data)
+			index++;
+		ptr->id = index;
+		ptr = ptr->next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:39:54 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/17 19:01:23 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/23 11:37:12 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_segment
 
 typedef struct s_stack_node
 {
+	int					id;
 	int					data;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
@@ -81,5 +82,7 @@ int		get_median_a(t_stack *stacks);
 int		get_median_b(t_stack *stacks);
 void	sort_array(int *arr, int size);
 
+void	quick_sort(int *arr, int start, int end);
+void	init_ids(t_stack *stacks);
 
 #endif
