@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:13:10 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/23 20:35:01 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:52:37 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ void	sort_five_b(t_stack *stacks, int segment_size)
 	if (stacks->size_b > 5)
 		temp_size = stacks->size_b - 5;
 	i = 0;
-	// Move all elements beyond the first 3 to stack A temporarily
 	while (i < temp_size)
 	{
-		rrb(stacks, 1);  // No output
-		pa(stacks);  // No output
+		rrb(stacks, 1);
+		pa(stacks);
 		i++;
 	}
 	turn_on = 1;

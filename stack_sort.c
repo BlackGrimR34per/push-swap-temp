@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:30:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/23 20:44:37 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:39:21 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,32 @@ void	stack_sort(t_stack *stacks)
 	if (stacks->size_a <= 5)
 		sort_five_a(stacks);
 	else
-		sort_a(stacks, stacks->size_a);
+	{
+		segment.segment_size = stacks->size_a;
+		segment.start = 0;
+		segment.stack = 'A';
+		get_median_segment(stacks, &segment, 'A');
+		sort_a(stacks, &segment);
+	}
 }
 
-void	sort_a(t_stack *stacks, int segment_size)
+void	sort_a(t_stack *stacks, t_segment *segment)
 {
-	int	median;
-	int	pushed;
+	int			median;
+	int			pushed;
+	t_segment	new_segment;
 
-	if (stacks->size_a <= 5)
+	if (segment->segment_size <= 5)
 	{
 		sort_five_a(stacks);
 		return ;
 	}
-	median = get_median_a(stacks);
+	median = get_median_segment(stacks, segment, 'A');
 	pushed = 0;
-	while (pushed < segment_size / 2)
+	new_segment.start = 0;
+	new_segment.segment_size = segment->segment_size / 2;
+	new_segment.stack = 'B';
+	while (pushed < segment->segment_size / 2)
 	{
 		if (stacks->a->id <= median)
 		{
@@ -47,22 +57,28 @@ void	sort_a(t_stack *stacks, int segment_size)
 		else
 			ra(stacks, 1);
 	}
-	sort_a(stacks, stacks->size_a);
+	segment->segment_size -= pushed;
+	sort_a(stacks, segment);
+	sort_b(stacks, &new_segment);
 }
 
-void	sort_b(t_stack *stacks, int segment_size)
+void	sort_b(t_stack *stacks, t_segment *segment)
 {
-	int	median;
-	int	pushed;
+	int			median;
+	int			pushed;
+	t_segment	new_segment;
 
-	if (stacks->size_b <= 5)
+	if (segment->segment_size <= 5)
 	{
-		sort_five_b(stacks, segment_size);
+		sort_five_b(stacks, segment->segment_size);
 		return ;
 	}
-	median = get_median_b(stacks);
+	median = get_median_segment(stacks, segment, 'B');
 	pushed = 0;
-	while (pushed < segment_size / 2)
+	new_segment.start = 0;
+	new_segment.segment_size = segment->segment_size / 2;
+	new_segment.stack = 'A';
+	while (pushed < segment->segment_size / 2)
 	{
 		if (stacks->b->id > median)
 		{
@@ -72,6 +88,7 @@ void	sort_b(t_stack *stacks, int segment_size)
 		else
 			rb(stacks, 1);
 	}
-	sort_a(stacks, pushed);
-	sort_b(stacks, segment_size - pushed);
+	segment->segment_size -= pushed;
+	sort_a(stacks, &new_segment);
+	sort_b(stacks, segment);
 }
