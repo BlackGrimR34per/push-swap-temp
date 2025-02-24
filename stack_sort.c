@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:30:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/24 13:39:21 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:39:50 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	sort_a(t_stack *stacks, t_segment *segment)
 	segment->segment_size -= pushed;
 	sort_a(stacks, segment);
 	sort_b(stacks, &new_segment);
+	while (pushed--)
+		pa(stacks);
 }
 
 void	sort_b(t_stack *stacks, t_segment *segment)
