@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:39:09 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/24 17:24:29 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:00:30 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	main(int argc, char *argv[])
 		printf("Stack A: %d\n", temp->data);
 		temp = temp->next;
 	}
-	// temp = stacks.b;
-	// while (temp)
-	// {
-	// 	printf("Stack B: %d\n", temp->data);
-	// 	temp = temp->next;
-	// }
+	temp = stacks.b;
+	while (temp)
+	{
+		printf("Stack B: %d\n", temp->data);
+		temp = temp->next;
+	}
 	return (0);
 }
