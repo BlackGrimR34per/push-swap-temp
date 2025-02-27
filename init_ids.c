@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:29:47 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/23 11:55:24 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/26 13:44:11 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_ids(t_stack *stacks)
 		arr[index++] = ptr->data;
 		ptr = ptr->next;
 	}
-	quick_sort(arr, 0, stacks->size_a);
+	quick_sort(arr, 0, ((stacks->size_a) - 1));
 	ptr = stacks->a;
 	while (ptr)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:13:10 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/24 16:30:50 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/02/26 21:48:19 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	sort_five_b_helper(t_stack *stacks, int segment_size)
 			pa(stacks);
 		else if (max_index > segment_size / 2)
 			rrb(stacks, 1);
-		else if (max_index < segment_size / 2)
-			ra(stacks, 1);
+		else if (max_index <= segment_size / 2)
+			rb(stacks, 1);
 	}
 	sort_three_b(stacks);
 	pb(stacks);
