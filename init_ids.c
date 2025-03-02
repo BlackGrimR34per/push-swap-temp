@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:29:47 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/26 13:44:11 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/02 14:19:07 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	init_ids(t_stack *stacks)
 		ptr->id = index;
 		ptr = ptr->next;
 	}
+	free(arr);
 }
