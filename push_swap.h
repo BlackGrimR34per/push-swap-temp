@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:39:54 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/24 13:31:41 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:53:57 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
-typedef struct s_segment
-{
-	int		segment_size;
-	int		start;
-	int		min;
-	int		max;
-	char	stack;
-}	t_segment;
+# include <stdbool.h>
 
 typedef struct s_stack_node
 {
-	int					id;
 	int					data;
+	int					index;
+	int					push_cost;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }	t_stack_node;
@@ -47,6 +43,7 @@ int		check_input(char *argv[]);
 long	ft_atol(const char *str);
 int		ft_isdigit(char c);
 t_stack_node	*ft_lstlast(t_stack_node *node);
+
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
@@ -61,7 +58,6 @@ int		input_free(char *argv[]);
 int		repeat(t_stack *stacks, int nbr);
 void	stack_init(t_stack *stacks, char *argv[]);
 
-// void	stack_sort(t_stack *stacks);
 void	sa(t_stack *stacks, int to_print);
 void	sb(t_stack *stacks, int to_print);
 void	ss(t_stack *stacks);
@@ -79,16 +75,18 @@ void	sort_three_a(t_stack *stacks);
 void	sort_three_b(t_stack *stacks);
 void	sort_five_a(t_stack *stacks);
 void	sort_five_b(t_stack *stacks, int segment_size);
-int		find_min_index(t_stack_node *node);
+t_stack_node	*find_min(t_stack_node *node);
 int		find_max_index(t_stack_node *node);
 
-int		get_median_segment(t_stack *stacks, t_segment *segment, char stack);
-void	sort_array(int *arr, int size);
+void	current_index(t_stack *stacks, t_stack_node *node, char stack);
+void	prep_for_push(t_stack *stacks, t_stack_node *node, char stack);
 
-void	quick_sort(int *arr, int start, int end);
-void	init_ids(t_stack *stacks);
-
-void	sort_a(t_stack *stacks, t_segment *segment);
-void	sort_b(t_stack *stacks, t_segment *segment);
+void	set_target_a(t_stack_node *a, t_stack_node *b);
+void	cost_analysis_a(t_stack *stacks);
+void	set_cheapest(t_stack_node *node);
+void	set_target_a(t_stack_node *a, t_stack_node *b);
+void	set_target_b(t_stack *stacks);
+t_stack_node	*get_cheapest(t_stack_node *node);
+void	rotate_both(t_stack *stacks, t_stack_node *node);
 
 #endif

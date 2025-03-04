@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:11:34 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/23 11:29:42 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/03 14:45:24 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	stack_init(t_stack *stacks, char *argv[])
 		add_to_stack(stacks, nbr);
 	}
 	free(argv);
-	init_ids(stacks);
 }

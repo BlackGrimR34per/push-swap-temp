@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   prep_for_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 17:30:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/04 14:54:52 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/03 21:39:34 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/03 21:44:43 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_sort(t_stack *stacks)
+void	prep_for_push(t_stack *stacks, t_stack_node *node, char stack)
 {
-	while (stacks->size_a > 3 && is_unsorted(stacks))
+	if (stack == 'A')
 	{
-		init_a_nodes(stacks);
-		move_a_to_b(stacks->a, stacks->b);
+		while (stacks->a != node)
+		{
+			if (node->above_median)
+				ra(stacks, 1);
+			else
+				rra(stacks, 1);
+		}
 	}
-	sort_three_a(stacks);
-	while (stacks->b)
+	else
 	{
-		init_b_nodes();
-		move_b_to_a(stacks);
+		while (stacks->b != node)
+		{
+			if (node->above_median)
+				rb(stacks, 1);
+			else
+				rrb(stacks, 1);
+		}
 	}
-	current_index(stacks, stacks->a, 'A');
-	min_on_top();
 }
