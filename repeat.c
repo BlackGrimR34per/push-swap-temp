@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 20:27:42 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/12 23:43:25 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/06 20:52:21 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/07 15:38:35 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	repeat(t_stack *stacks, int nbr)
 	if (!stacks->a)
 		return (0);
 	temp = stacks->a;
-	while (temp->next)
+	while (temp)
 	{
 		if (nbr == temp->data)
 			return (1);

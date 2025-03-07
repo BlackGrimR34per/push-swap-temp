@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 17:40:20 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/11 17:41:06 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/06 14:07:54 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/06 14:09:34 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	ft_isdigit(char c)
 {

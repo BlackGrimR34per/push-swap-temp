@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 00:06:24 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/11 20:10:21 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/06 13:40:10 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/06 13:53:22 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int	count_words(const char *s, char c)
 {
 	int	word_count;
 
-	if (!*s)
-		return (0);
 	word_count = 0;
+	if (!*s)
+		return (word_count);
 	while (*s)
 	{
 		while (*s == c)
@@ -37,7 +37,7 @@ char	**ft_split(const char *s, char c)
 	size_t	word_len;
 	int		index;
 
-	output = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	output = malloc(sizeof(char *) * count_words(s, c) + 1);
 	if (!output)
 		return (NULL);
 	index = 0;

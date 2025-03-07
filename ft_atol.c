@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 20:19:46 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/11 20:25:04 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/07 15:22:16 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/07 15:25:32 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long	ft_atol(const char *str)
 	if (*str == 43 || *str == 45)
 	{
 		if (*str == 45)
-			sign = -1;
+			sign *= -1;
 		str++;
 	}
 	while (*str >= 48 && *str <= 57)

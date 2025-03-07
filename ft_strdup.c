@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 23:51:42 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/10 23:57:44 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/05 10:41:39 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/05 10:44:06 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 char	*ft_strdup(const char *s1)
 {
 	int		index;
-	char	*dest;
+	char	*str;
 	size_t	length;
 
 	index = -1;
 	length = ft_strlen(s1);
-	dest = (char *)malloc(sizeof(char) * (length + 1));
-	if (!dest)
+	str = (char *)malloc(sizeof(char) * (length + 1));
+	if (!str)
 		return (NULL);
 	while (s1[++index])
-		dest[index] = s1[index];
-	dest[index] = '\0';
-	return (dest);
+		str[index] = s1[index];
+	str[index] = '\0';
+	return (str);
 }

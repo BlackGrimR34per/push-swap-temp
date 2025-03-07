@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_error.c                                      :+:      :+:    :+:   */
+/*   stack_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 23:41:02 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/04 23:41:31 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/07 16:01:39 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/07 17:13:54 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	write_error(void)
+
+int	stack_free(t_stack_node *node)
 {
-	write(1, "Error\n", 6);
+	t_stack_node	*temp;
+
+	temp = node->next;
+	while (temp)
+	{
+		free(node);
+		node = temp;
+		temp = temp->next;
+	}
 	return (1);
 }

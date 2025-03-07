@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 23:48:40 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/11 00:31:19 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/05 10:39:35 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/06 14:32:38 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	**input_seperator(char *argv[])
 		free(temp);
 	}
 	split_args = ft_split(temp_str, ' ');
-	free(temp_str);
+	free (temp_str);
 	return (split_args);
 }
