@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 20:38:56 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/07 17:05:34 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/07 17:28:06 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	stack_init(t_stack *stacks, char *argv[])
 			return (input_free(argv, 1));
 		if (repeat(stacks, (int)nbr))
 			return (input_free(argv, 1));
-		// add_to_stack(stacks, nbr);
+		add_to_stack(stacks, nbr);
 	}
 	return (input_free(argv, 0));
 }

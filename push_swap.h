@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/07 16:06:50 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/07 23:15:18 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_stack
 
 void	add_to_stack(t_stack *stacks, int nbr);
 int		check_input(char *argv[]);
+void	current_index(t_stack *stacks, char stack);
 long	ft_atol(const char *str);
 int		ft_isdigit(char c);
 t_stack_node	*ft_lstlast(t_stack_node *node);
@@ -51,9 +52,11 @@ size_t	ft_strlen(const char *s);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 int		input_free(char *argv[], int error);
 char	**input_seperator(char *argv[]);
+int		is_unsorted(t_stack_node *node);
 int		repeat(t_stack *stacks, int nbr);
 int		stack_free(t_stack_node *node);
 int		stack_init(t_stack *stacks, char *argv[]);
+void	stack_sort(t_stack *stacks);
 int		write_error(void);
 
 #endif
