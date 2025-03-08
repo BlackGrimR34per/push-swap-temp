@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 06:27:13 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/08 17:20:09 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:13:57 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	set_target_a(t_stack *stacks)
 		}
 		temp_a->target_node = target_node;
 		if (closest_number == LONG_MIN)
-			temp_a->target_node = find_largest_node();
+			temp_a->target_node = find_largest_node(stacks);
 		temp_a = temp_a->next;
 	}
 }

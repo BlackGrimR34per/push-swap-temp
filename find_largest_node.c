@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   find_largest_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 19:29:13 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/08 21:31:57 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/08 21:34:31 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/08 22:10:24 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_sort(t_stack *stacks)
+t_stack_node	*find_largest_node(t_stack *stacks)
 {
-	while (stacks->size_a > 3 && is_unsorted(stacks->a))
+	t_stack_node	*temp_b;
+	t_stack_node	*largest_node;
+	long			largest_value;
+
+	temp_b = stacks->b;
+	largest_value = temp_b->data;
+	while (temp_b)
 	{
-		init_a_nodes(stacks);
-		move_a_to_b(stacks);
+		if (temp_b->data > largest_value)
+		{
+			largest_node = temp_b;
+			largest_value = temp_b->data;
+		}
+		temp_b = temp_b->next;
 	}
-	// sort_three();
+	return (largest_node);
 }
