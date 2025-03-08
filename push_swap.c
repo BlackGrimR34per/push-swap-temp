@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:18:44 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/07 19:27:40 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/07 23:17:04 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char *argv[])
 	if (stack_init(&stacks, argv))
 		stack_free(stacks.a);
 	if (is_unsorted(stacks.a))
-		stack_sort();
+		stack_sort(&stacks);
 }
 
 // static void	stack_print(t_stack *stacks)
