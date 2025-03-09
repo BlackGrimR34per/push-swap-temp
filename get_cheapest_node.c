@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_cheapest.c                                     :+:      :+:    :+:   */
+/*   get_cheapest_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/08 17:37:46 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/09 01:36:27 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/09 01:32:03 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/09 01:40:17 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_cheapest(t_stack *stacks)
+t_stack_node	*get_cheapest_node(t_stack_node *node)
 {
-	t_stack_node	*temp_a;
-	t_stack_node	*cheapest_node;
-	long			cheapest_cost;
+	t_stack_node	*temp;
 
-	temp_a = stacks->a;
-	cheapest_cost = stacks->a->push_cost;
-	while (temp_a)
+	if (!node)
+		return (NULL);
+	temp = node;
+	while (temp)
 	{
-		if (temp_a->push_cost < cheapest_cost)
-		{
-			cheapest_node = temp_a;
-			cheapest_cost = temp_a->push_cost;
-		}
-		temp_a = temp_a->next;
+		if (temp->cheapest)
+			return (temp);
+		temp = temp->next;
 	}
-	cheapest_node->cheapest = true;
+	return (NULL);
 }

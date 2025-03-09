@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/08 21:33:58 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:06:49 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	add_to_stack(t_stack *stacks, int nbr);
 int		check_input(char *argv[]);
 void	cost_analysis_a(t_stack *stacks);
 void	current_index(t_stack *stacks, char stack);
+t_stack_node	*find_largest_node(t_stack *stacks);
 long	ft_atol(const char *str);
 int		ft_isdigit(char c);
 t_stack_node	*ft_lstlast(t_stack_node *node);
@@ -56,6 +57,8 @@ int		input_free(char *argv[], int error);
 char	**input_seperator(char *argv[]);
 int		is_unsorted(t_stack_node *node);
 int		repeat(t_stack *stacks, int nbr);
+void	sa(t_stack *stacks);
+void	sb(t_stack *stacks);
 void	set_cheapest(t_stack *stacks);
 void	set_target_a(t_stack *stacks);
 int		stack_free(t_stack_node *node);
