@@ -5,37 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 14:38:59 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/13 15:49:49 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/08 22:24:52 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/10 00:30:14 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack *stacks)
+void	pa(t_stack	*stacks)
 {
-	t_stack_node	*temp;
-
 	if (!stacks->b)
 		return ;
-	temp = stacks->b;
-	stacks->b = stacks->b->next;
-	if (stacks->b)
-		stacks->b->prev = NULL;
 	if (!stacks->a)
 	{
-		temp->next = NULL;
-		temp->prev = NULL;
-		stacks->a = temp;
+		stacks->a = stacks->b;
+		stacks->b = stacks->b->next;
+		stacks->b->prev = NULL;
+		stacks->a->next = NULL;
+		stacks->a->prev = NULL;
 	}
 	else
 	{
-		temp->next = stacks->a;
-		temp->prev = NULL;
-		stacks->a->prev = temp;
-		stacks->a = temp;
+		stacks->a->prev = stacks->b;
+		stacks->b = stacks->b->next;
+		stacks->b->prev = NULL;
+		stacks->a->prev->next = stacks->a;
+		stacks->a = stacks->a->prev;
 	}
-	stacks->size_a++;
 	stacks->size_b--;
+	stacks->size_a++;
 	write(1, "pa\n", 3);
 }

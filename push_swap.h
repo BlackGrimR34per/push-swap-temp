@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 00:06:49 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:31:26 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	init_a_nodes(t_stack *stacks);
 int		input_free(char *argv[], int error);
 char	**input_seperator(char *argv[]);
 int		is_unsorted(t_stack_node *node);
+void	pa(t_stack	*stacks);
+void	pb(t_stack	*stacks);
 int		repeat(t_stack *stacks, int nbr);
 void	sa(t_stack *stacks);
 void	sb(t_stack *stacks);
