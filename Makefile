@@ -6,7 +6,7 @@
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 18:57:40 by yosherau          #+#    #+#              #
-#    Updated: 2025/03/10 16:23:43 by yosherau         ###   ########.fr        #
+#    Updated: 2025/03/10 22:12:01 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ CFLAGS		=		-Wall -Wextra -Werror
 
 NAME		=		push_swap
 
+BONUS_NAME	=		checker
+
 RM			=		rm -rf
 
 all:				$(NAME)
@@ -49,6 +51,10 @@ clean:
 
 fclean:				clean
 					$(RM) $(NAME)
+
+bonus:				$(BONUS_NAME)
+
+$(BONUS_NAME):		
 
 re:					fclean all
 

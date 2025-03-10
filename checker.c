@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_free.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 16:01:39 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 22:23:40 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/10 22:12:16 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/10 22:22:18 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_free(t_stack_node *node, int error)
+int	main(int argc, char *argv[])
 {
-	t_stack_node	*temp;
+	t_stack	stacks;
 
-	while (node)
+	if (argc < 2)
+		return (-1);
+	else
 	{
-		temp = node->next;
-		free(node);
-		node = temp;
+		stacks.a = NULL;
+		stacks.b = NULL;
+		stacks.size_a = 0;
+		stacks.size_b = 0;
+		argv = input_seperator(argv);
+		if (check_input(argv))
+			return (input_free(argv, 1));
+		if (stack_init(&stacks, argv))
+			stack_free(stacks.a);
 	}
-	if (error)
-		return (1);
-	return (0);
 }

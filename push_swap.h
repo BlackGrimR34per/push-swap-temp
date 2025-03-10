@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 17:41:20 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 22:24:12 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void			set_b_target(t_stack *stacks);
 void			set_cheapest(t_stack *stacks);
 void			sort_three(t_stack *stacks);
 void			ss(t_stack *stacks);
-int				stack_free(t_stack_node *node);
+int				stack_free(t_stack_node *node, int error);
 int				stack_init(t_stack *stacks, char *argv[]);
 void			stack_sort(t_stack *stacks);
 int				write_error(void);
