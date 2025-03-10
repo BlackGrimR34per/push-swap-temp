@@ -6,14 +6,12 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:18:44 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 14:55:28 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 18:47:08 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
-
-// static void	stack_print(t_stack *stacks);
 
 int	main(int argc, char *argv[])
 {
@@ -32,16 +30,5 @@ int	main(int argc, char *argv[])
 		stack_free(stacks.a);
 	if (is_unsorted(stacks.a))
 		stack_sort(&stacks);
+	stack_free(stacks.a);
 }
-
-// static void	stack_print(t_stack *stacks)
-// {
-// 	t_stack_node	*temp;
-
-// 	temp = stacks->a;
-// 	while (temp)
-// 	{
-// 		printf("%d\n", temp->data);
-// 		temp = temp->next;
-// 	}
-// }
