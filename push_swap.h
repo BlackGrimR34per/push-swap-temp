@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 16:18:12 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 17:41:20 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void			rr(t_stack *stacks);
 void			rra(t_stack *stacks, int to_print);
 void			rrb(t_stack *stacks, int to_print);
 void			rrotate_stacks(t_stack *stacks, t_stack_node *cheapest_node);
+void			rrr(t_stack *stacks);
 void			sa(t_stack *stacks, int to_print);
 void			sb(t_stack *stacks, int to_print);
 void			set_a_target(t_stack *stacks);

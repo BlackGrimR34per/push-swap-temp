@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 17:37:46 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/09 01:36:27 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 17:30:46 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	set_cheapest(t_stack *stacks)
 	long			cheapest_cost;
 
 	temp_a = stacks->a;
+	cheapest_node = stacks->a;
 	cheapest_cost = stacks->a->push_cost;
 	while (temp_a)
 	{
