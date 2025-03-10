@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:24:52 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 00:24:49 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:15:59 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	pb(t_stack	*stacks)
 	{
 		stacks->b->prev = stacks->a;
 		stacks->a = stacks->a->next;
-		stacks->a->prev = NULL;
+		if (stacks->a)
+			stacks->a->prev = NULL;
 		stacks->b->prev->next = stacks->b;
 		stacks->b = stacks->b->prev;
 	}
