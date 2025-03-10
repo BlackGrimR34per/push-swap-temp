@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:24:52 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 00:30:14 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:11:32 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	pa(t_stack	*stacks)
 	{
 		stacks->a->prev = stacks->b;
 		stacks->b = stacks->b->next;
-		stacks->b->prev = NULL;
+		if (stacks->b)
+			stacks->b->prev = NULL;
 		stacks->a->prev->next = stacks->a;
 		stacks->a = stacks->a->prev;
 	}
