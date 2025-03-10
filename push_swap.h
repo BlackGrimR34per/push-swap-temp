@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 12:56:29 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 14:53:28 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ void	ra(t_stack *stacks, int to_print);
 void	rb(t_stack *stacks, int to_print);
 int		repeat(t_stack *stacks, int nbr);
 void	rr(t_stack *stacks);
-void	rra(t_stack *stacks);
+void	rra(t_stack *stacks, int to_print);
+void	rrb(t_stack *stacks, int to_print);
 void	sa(t_stack *stacks, int to_print);
 void	sb(t_stack *stacks, int to_print);
 void	set_cheapest(t_stack *stacks);

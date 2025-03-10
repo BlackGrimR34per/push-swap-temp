@@ -6,13 +6,13 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:45:29 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 12:58:50 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:59:45 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack *stacks)
+void	rra(t_stack *stacks, int to_print)
 {
 	t_stack_node	*last_node;
 
@@ -24,5 +24,6 @@ void	rra(t_stack *stacks)
 	stacks->a->prev = last_node;
 	stacks->a = last_node;
 	last_node->prev = NULL;
-	write(1, "rra\n", 4);
+	if (to_print)
+		write(1, "rra\n", 4);
 }
