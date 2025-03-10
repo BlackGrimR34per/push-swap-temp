@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 00:44:11 by yosherau          #+#    #+#             */
-/*   Updated: 2025/02/16 16:47:13 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/10 12:27:48 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/10 12:40:18 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 void	ra(t_stack *stacks, int to_print)
 {
 	t_stack_node	*last_node;
-	t_stack_node	*first_node;
 
 	if (!stacks->a || !stacks->a->next)
 		return ;
-	first_node = stacks->a;
 	last_node = ft_lstlast(stacks->a);
-	stacks->a = first_node->next;
+	last_node->next = stacks->a;
+	stacks->a->prev = last_node;
+	stacks->a = stacks->a->next;
 	stacks->a->prev = NULL;
-	first_node->next = NULL;
-	first_node->prev = last_node;
-	last_node->next = first_node;
+	last_node->next->next = NULL;
 	if (to_print)
 		write(1, "ra\n", 3);
 }

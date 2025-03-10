@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 00:31:26 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:56:29 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,16 @@ char	**input_seperator(char *argv[]);
 int		is_unsorted(t_stack_node *node);
 void	pa(t_stack	*stacks);
 void	pb(t_stack	*stacks);
+void	ra(t_stack *stacks, int to_print);
+void	rb(t_stack *stacks, int to_print);
 int		repeat(t_stack *stacks, int nbr);
-void	sa(t_stack *stacks);
-void	sb(t_stack *stacks);
+void	rr(t_stack *stacks);
+void	rra(t_stack *stacks);
+void	sa(t_stack *stacks, int to_print);
+void	sb(t_stack *stacks, int to_print);
 void	set_cheapest(t_stack *stacks);
 void	set_target_a(t_stack *stacks);
+void	ss(t_stack *stacks);
 int		stack_free(t_stack_node *node);
 int		stack_init(t_stack *stacks, char *argv[]);
 void	stack_sort(t_stack *stacks);

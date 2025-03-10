@@ -6,13 +6,13 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 22:34:05 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/09 23:59:04 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:41:52 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *stacks)
+void	sa(t_stack *stacks, int to_print)
 {
 	t_stack_node	*temp;
 
@@ -24,4 +24,6 @@ void	sa(t_stack *stacks)
 	temp->next = stacks->a->next;
 	stacks->a->next = temp;
 	stacks->a->prev = NULL;
+	if (to_print)
+		write(1, "sa\n", 3);
 }
