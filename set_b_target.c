@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_largest_node.c                                :+:      :+:    :+:   */
+/*   set_b_target.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/08 21:34:31 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 16:33:00 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/10 15:39:08 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/10 15:53:28 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*find_largest_node(t_stack *stacks)
+void	set_b_target(t_stack *stacks)
 {
+	t_stack_node	*temp_a;
 	t_stack_node	*temp_b;
-	t_stack_node	*largest_node;
-	long			largest_value;
+	t_stack_node	*target_node;
+	long			closest_number;
 
 	temp_b = stacks->b;
-	largest_node = temp_b;
-	largest_value = temp_b->data;
 	while (temp_b)
 	{
-		if (temp_b->data > largest_value)
+		closest_number = LONG_MAX;
+		temp_a = stacks->a;
+		while (temp_a)
 		{
-			largest_node = temp_b;
-			largest_value = temp_b->data;
+			if (temp_a->data > temp_b->data && temp_a->data < closest_number)
+			{
+				target_node = temp_a;
+				closest_number = temp_a->data;
+			}
+			temp_a = temp_a->next;
 		}
+		temp_b->target_node = target_node;
+		if (closest_number == LONG_MAX)
+			temp_b->target_node = find_smallest_node(stacks);
 		temp_b = temp_b->next;
 	}
-	return (largest_node);
 }

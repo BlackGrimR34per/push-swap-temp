@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   find_smallest_node.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 19:29:13 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 16:09:38 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/08 21:34:31 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/10 16:33:11 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_sort(t_stack *stacks)
+t_stack_node	*find_smallest_node(t_stack *stacks)
 {
-	if (stacks->size_a > 3)
-		pb(stacks);
-	if (stacks->size_a > 3)
-		pb(stacks);
-	while (stacks->size_a > 3 && is_unsorted(stacks->a))
+	t_stack_node	*temp_a;
+	t_stack_node	*smallest_node;
+	long			smallest_value;
+
+	temp_a = stacks->a;
+	smallest_node = temp_a;
+	smallest_value = temp_a->data;
+	while (temp_a)
 	{
-		init_a_nodes(stacks);
-		move_a_to_b(stacks);
+		if (temp_a->data < smallest_value)
+		{
+			smallest_node = temp_a;
+			smallest_value = temp_a->data;
+		}
+		temp_a = temp_a->next;
 	}
-	sort_three(stacks);
-	while (stacks->b)
-	{
-		init_b_nodes(stacks);
-		move_b_to_a(stacks);
-	}
-	current_index(stacks, 'A');
-	place_min_on_top(stacks);
+	return (smallest_node);
 }
