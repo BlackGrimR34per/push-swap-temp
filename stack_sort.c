@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 19:29:13 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 16:09:38 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:45:13 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	stack_sort(t_stack *stacks)
 {
 	if (stacks->size_a > 3)
-		pb(stacks);
+		pb(stacks, 1);
 	if (stacks->size_a > 3)
-		pb(stacks);
+		pb(stacks, 1);
 	while (stacks->size_a > 3 && is_unsorted(stacks->a))
 	{
 		init_a_nodes(stacks);

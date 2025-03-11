@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_stacks.c                                    :+:      :+:    :+:   */
+/*   instruction_reader.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 15:05:12 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/11 00:44:41 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/11 00:34:54 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/11 17:59:33 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
+#include <stdio.h>
 
-void	rotate_stacks(t_stack *stacks, t_stack_node *cheapest_node)
+void	instruction_reader(t_stack *stacks)
 {
-	while (stacks->a != cheapest_node
-		&& stacks->b != cheapest_node->target_node)
-		rr(stacks, 1);
-	current_index(stacks, 'A');
-	current_index(stacks, 'B');
+	char	*line;
+
+	line = get_next_line(1);
+	while (line)
+	{
+		instruction_handler(stacks, line);
+		free(line);
+		line = get_next_line(1);
+	}
 }

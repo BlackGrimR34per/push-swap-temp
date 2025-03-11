@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:40:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 22:24:12 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:44:12 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,25 @@ int				is_unsorted(t_stack_node *node);
 void			move_a_to_b(t_stack *stacks);
 void			move_b_to_a(t_stack *stacks);
 void			node_to_top(t_stack *stacks, t_stack_node *node, char stack);
-void			pa(t_stack	*stacks);
-void			pb(t_stack	*stacks);
+void			pa(t_stack	*stacks, int to_print);
+void			pb(t_stack	*stacks, int to_print);
 void			place_min_on_top(t_stack *stacks);
 void			ra(t_stack *stacks, int to_print);
 void			rb(t_stack *stacks, int to_print);
 int				repeat(t_stack *stacks, int nbr);
 void			rotate_stacks(t_stack *stacks, t_stack_node *cheapest_node);
-void			rr(t_stack *stacks);
+void			rr(t_stack *stacks, int to_print);
 void			rra(t_stack *stacks, int to_print);
 void			rrb(t_stack *stacks, int to_print);
 void			rrotate_stacks(t_stack *stacks, t_stack_node *cheapest_node);
-void			rrr(t_stack *stacks);
+void			rrr(t_stack *stacks, int to_print);
 void			sa(t_stack *stacks, int to_print);
 void			sb(t_stack *stacks, int to_print);
 void			set_a_target(t_stack *stacks);
 void			set_b_target(t_stack *stacks);
 void			set_cheapest(t_stack *stacks);
 void			sort_three(t_stack *stacks);
-void			ss(t_stack *stacks);
+void			ss(t_stack *stacks, int to_print);
 int				stack_free(t_stack_node *node, int error);
 int				stack_init(t_stack *stacks, char *argv[]);
 void			stack_sort(t_stack *stacks);

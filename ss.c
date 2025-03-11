@@ -6,15 +6,16 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:43:58 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 12:45:04 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:41:49 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_stack *stacks)
+void	ss(t_stack *stacks, int to_print)
 {
 	sa(stacks, 0);
 	sb(stacks, 0);
-	write(1, "ss\n", 3);
+	if (to_print)
+		write(1, "ss\n", 3);
 }

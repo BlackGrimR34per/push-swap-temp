@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:01:10 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 17:40:56 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:44:46 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rrotate_stacks(t_stack *stacks, t_stack_node *cheapest_node)
 {
 	while (stacks->a != cheapest_node
 		&& stacks->b != cheapest_node->target_node)
-		rrr(stacks);
+		rrr(stacks, 1);
 	current_index(stacks, 'A');
 	current_index(stacks, 'B');
 }

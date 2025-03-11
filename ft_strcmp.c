@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_stacks.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 15:05:12 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/11 00:44:41 by yosherau         ###   ########.fr       */
+/*   Created: 2024/10/30 19:19:50 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/11 00:50:11 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	rotate_stacks(t_stack *stacks, t_stack_node *cheapest_node)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	while (stacks->a != cheapest_node
-		&& stacks->b != cheapest_node->target_node)
-		rr(stacks, 1);
-	current_index(stacks, 'A');
-	current_index(stacks, 'B');
+	int	index;
+
+	index = 0;
+	while (s1[index] && s2[index])
+	{
+		if (s1[index] != s2[index])
+			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
+		index++;
+	}
+	return ((unsigned char)s1[index] - (unsigned char)s2[index]);
 }

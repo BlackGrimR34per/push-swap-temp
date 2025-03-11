@@ -6,13 +6,13 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:24:52 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 12:15:59 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:44:25 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_stack	*stacks)
+void	pb(t_stack	*stacks, int to_print)
 {
 	if (!stacks->a)
 		return ;
@@ -35,5 +35,6 @@ void	pb(t_stack	*stacks)
 	}
 	stacks->size_a--;
 	stacks->size_b++;
-	write(1, "pb\n", 3);
+	if (to_print)
+		write(1, "pb\n", 3);
 }

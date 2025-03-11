@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 01:30:14 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/10 16:16:23 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:45:07 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	move_a_to_b(t_stack *stacks)
 		rotate_stacks(stacks, cheapest_node);
 	node_to_top(stacks, cheapest_node, 'A');
 	node_to_top(stacks, cheapest_node->target_node, 'B');
-	pb(stacks);
+	pb(stacks, 1);
 }

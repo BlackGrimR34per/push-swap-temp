@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_stacks.c                                    :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 15:05:12 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/11 00:44:41 by yosherau         ###   ########.fr       */
+/*   Created: 2025/03/10 22:33:02 by yosherau          #+#    #+#             */
+/*   Updated: 2025/03/11 16:17:48 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-void	rotate_stacks(t_stack *stacks, t_stack_node *cheapest_node)
-{
-	while (stacks->a != cheapest_node
-		&& stacks->b != cheapest_node->target_node)
-		rr(stacks, 1);
-	current_index(stacks, 'A');
-	current_index(stacks, 'B');
-}
+# include "gnl/get_next_line.h"
+# include "push_swap.h"
+
+int		ft_strcmp(const char *s1, const char *s2);
+int		instruction_handler(t_stack *stacks, char *operation);
+void	instruction_reader(t_stack *stacks);
+
+#endif
