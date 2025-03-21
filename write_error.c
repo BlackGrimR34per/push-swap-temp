@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:41:02 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/11 17:57:12 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/20 00:15:40 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	write_error(void)
 {
-	write(1, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	write(2, "Error\n", 6);
+	exit(1);
 }

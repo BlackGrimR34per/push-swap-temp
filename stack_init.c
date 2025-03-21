@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 20:38:56 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/07 17:28:06 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/20 00:24:16 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	stack_init(t_stack *stacks, char *argv[])
 {
-	int	row;
-	int	nbr;
+	int		row;
+	long	nbr;
 
 	row = -1;
 	while (argv[++row])

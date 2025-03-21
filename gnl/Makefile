@@ -6,7 +6,7 @@
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/11 12:00:06 by yosherau          #+#    #+#              #
-#    Updated: 2025/03/11 15:57:54 by yosherau         ###   ########.fr        #
+#    Updated: 2025/03/20 12:32:44 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS_DIR		=	obj
 
 OBJS			=	$(patsubst %.c, $(OBJS_DIR)/%.o, $(SRCS))
 
-CC				=	CC
+CC				=	cc
 
 CFLAGS			=	-Wall -Wextra -Werror
 

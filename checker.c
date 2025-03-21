@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 22:12:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/11 18:05:11 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/21 13:23:38 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ int	main(int argc, char *argv[])
 			return (stack_free(stacks.a, 1));
 		instruction_reader(&stacks);
 		if (is_unsorted(stacks.a) || stacks.b)
-			write(1, "KO\n", 3);
+			write(1, "KO\n", 2);
 		else
-		write(1, "OK\n", 3);
+			write(1, "OK\n", 2);
 		stack_free(stacks.a, 0);
+		stack_free(stacks.b, 0);
 		return (0);
 	}
 }
