@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   input_seperator.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:39:35 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/20 13:11:57 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:20:56 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 char	**input_seperator(char *argv[])
 {

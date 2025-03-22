@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
+#    By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 18:57:40 by yosherau          #+#    #+#              #
-#    Updated: 2025/03/20 15:31:32 by yosherau         ###   ########.fr        #
+#    Updated: 2025/03/22 13:14:52 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,10 @@ RM			=			rm -rf
 all:					$(NAME)
 
 $(NAME):				$(OBJS)
-						$(CC) $(OBJS) -o $(NAME)
+						$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)/%.o:		%.c | $(OBJS_DIR)
-						$(CC) -c $< -o $@
+						$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS_DIR):
 						mkdir -p $(OBJS_DIR)
@@ -68,10 +68,10 @@ fclean:					clean
 bonus:					$(BONUS_NAME)
 
 $(BONUS_NAME):			$(BONUS_OBJS) $(LIBGNL)
-						$(CC) $^ -o $(BONUS_NAME)
+						$(CC) $(CFLAGS) $^ -o $(BONUS_NAME)
 
 $(BONUS_OBJS_DIR)/%.o:	%.c | $(BONUS_OBJS_DIR)
-						$(CC) -c $< -o $@
+						$(CC) $(CFLAGS) -c $< -o $@
 
 $(BONUS_OBJS_DIR):
 						mkdir -p $(BONUS_OBJS_DIR)

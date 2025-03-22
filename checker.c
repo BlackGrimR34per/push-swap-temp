@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 22:12:16 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/21 13:23:38 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:15:35 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
 #include "checker.h"
 
 int	main(int argc, char *argv[])

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   instruction_reader.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 00:34:54 by yosherau          #+#    #+#             */
-/*   Updated: 2025/03/21 13:13:53 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:19:27 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include <stdio.h>
 
 void	instruction_reader(t_stack *stacks)
 {
